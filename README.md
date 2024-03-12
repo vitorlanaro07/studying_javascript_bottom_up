@@ -1,0 +1,1 @@
+Studyng JavaScript with "JavaScript: The Definitive Guide, 7th Edition"
