@@ -11,13 +11,13 @@ this:
 *
 node charfreq.js < corpus.txt
 */
+
 // This class extends Map so that the get() method returns the specified
 // value instead of null when the key is not in the map
 class DefaultMap extends Map {
     constructor(defaultValue) {
         super();
-        // Invoke superclass
-        constructor
+        // Invoke superclass constructor
         this.defaultValue = defaultValue; // Remember the default value
     }
 
@@ -90,7 +90,7 @@ class Histogram {
 // the histogram. When it reaches the end of the stream, it returns this histogram
 async function histogramFromStdin() {
     process.stdin.setEncoding("utf-8");         // Read Unicode strings, not bytes
-
+    
     let histogram = new Histogram();
     for await (let chunk of process.stdin) {
         histogram.add(chunk);
@@ -102,5 +102,6 @@ async function histogramFromStdin() {
 // It makes a Histogram object from standard input, then prints the histogram.
 
 histogramFromStdin().then(histogram => {
-    console.log(histogram.toString()); 
+    console.log(histogram.toString());
+    console.log("Total letter: "+ histogram.totalLetters); 
 });
